@@ -1,0 +1,523 @@
+/* =========================================
+   1. GENERAL STYLES
+   ========================================= */
+
+/* Establece márgenes y paddings generales, y define la altura del body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Centra los encabezados h2 */
+h2 {
+    text-align: center;
+}
+
+/* Estilo general para los párrafos */
+p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* =========================================
+   2. HEADER
+   ========================================= */
+
+/* Estilos para el encabezado fijo */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente para mejor visibilidad */
+    z-index: 10;
+}
+
+/* Estilos para el logotipo */
+.logo img {
+    width: 150px; /* Ancho fijo para mejor escalabilidad */
+    height: auto;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+}
+
+/* =========================================
+   3. MENU PRINCIPAL
+   ========================================= */
+
+/* Lista del menú principal */
+.navHeader ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 20px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Estilos para los enlaces del menú */
+.navHeader a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el cursor */
+.navHeader a:hover {
+    color: #ffcc00;
+}
+
+/* =========================================
+   4. SUBMENÚ
+   ========================================= */
+
+/* Posicionamiento relativo para los elementos del submenú */
+.navHeader ul li {
+    position: relative;
+}
+
+/* Estilos para el submenú oculto inicialmente */
+.navHeader ul li .SubMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo semitransparente */
+    min-width: 200px;
+    border-radius: 5px;
+    padding: 0;
+    z-index: 1;
+}
+
+/* Muestra el submenú al pasar el cursor */
+.navHeader ul li:hover .SubMenu {
+    display: block;
+}
+
+/* Estilos para los ítems del submenú */
+.navHeader ul li .SubMenu li {
+    display: block;
+}
+
+/* Estilos para los enlaces del submenú */
+.navHeader ul li .SubMenu li a {
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambio de color al pasar el cursor sobre enlaces del submenú */
+.navHeader ul li .SubMenu li a:hover {
+    color: #ffcc00;
+}
+
+/* =========================================
+   5. SLIDER PRINCIPAL
+   ========================================= */
+
+/* Contenedor del slider con scroll oculto */
+.slider {
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Estilos para la sección principal dentro del slider */
+.mainIndex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px; /* Espacio para evitar superposición con el header */
+    padding: 20px;
+}
+
+/* Estilos para cada bloque principal */
+.divMain {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+/* Estilos para las imágenes principales */
+.divMain img.principal-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Estilos para los encabezados dentro de divMain */
+.divMain h2 {
+    font-size: 1.5em;
+    margin: 20px 0 10px;
+}
+
+/* Estilos para los enlaces dentro de los párrafos */
+.divMain p a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cambio de color al pasar el cursor sobre los enlaces */
+.divMain p a:hover {
+    color: #f39c12;
+}
+
+
+/* =========================================
+   8. SECCIONES INDIVIDUALES
+   ========================================= */
+
+/* Estilos generales para cada sección */
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor para videos de fondo */
+.videoSection {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilos para los videos */
+.videoSection video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor para el texto superpuesto */
+.contenedorTexto {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 153, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilos para los botones de "Más información" */
+.botonMasInformacion {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el cursor sobre los botones */
+.botonMasInformacion:hover {
+    background-color: grey;
+    color: white;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+
+/* Estilos generales para el footer */
+.footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor interno del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para el logotipo en el footer */
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Estilos para la imagen del logotipo en el footer */
+.footer-logo-img {
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+/* Contenedor para la información de contacto */
+.footer-contact {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para los párrafos dentro de la información de contacto */
+.footer-contact p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Estilos para los enlaces de contacto */
+.footer-contact a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cambio de color al pasar el cursor sobre los enlaces de contacto */
+.footer-contact a:hover {
+    color: #f39c12;
+}
+
+/* =========================================
+   10. SECCIÓN DE LOS DESARROLLADORES
+   ========================================= */
+
+/* Contenedor general de la sección del equipo */
+.team-section {
+    padding: 40px 10px;
+    background-color: #fff;
+    text-align: center;
+    background-image: url(imagenes/background.webp);
+}
+
+/* Contenedor interno para los miembros del equipo */
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para cada miembro del equipo */
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre el miembro del equipo */
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la foto del miembro */
+.member-photo img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+/* Estilos para el nombre del miembro */
+.member-info h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+/* Estilos para la descripción del miembro */
+.member-info p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* =========================================
+   11. SECCIÓN DE NEWSLETTER
+   ========================================= */
+
+/* Contenedor general de la sección de newsletter */
+.newsletter-section {
+    padding: 40px 10px;
+    background-color: #fff;
+    text-align: center;
+    background-image: url(imagenes/backgroundNewsletter.webp);
+}
+
+/* Contenedor interno para el formulario de newsletter */
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 245, 191, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Estilos para el encabezado de la newsletter */
+.newsletter-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el párrafo de la newsletter */
+.newsletter-container p {
+    font-size: 1em;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del formulario de newsletter */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Grupo de formulario para etiquetas e inputs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para las etiquetas del formulario */
+.form-group label {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+/* Estilos para los inputs del formulario */
+.form-group input {
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+/* Estilos para el botón de envío */
+.submit-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el cursor sobre el botón de envío */
+.submit-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* =========================================
+   12. CLASES REUTILIZABLES
+   ========================================= */
+
+/* Clase para bordes redondeados */
+.rounded {
+    border-radius: 10px;
+}
+
+/* Clase para sombras */
+.shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   13. MEDIA QUERIES PARA RESPONSIVIDAD
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Ajustes para el menú en pantallas pequeñas */
+    .navHeader ul {
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    /* Ajustes para el footer en pantallas pequeñas */
+    .footer-container {
+        flex-direction: column;
+    }
+
+    /* Ajustes para la sección principal en pantallas pequeñas */
+    .mainIndex {
+        flex-direction: column;
+    }
+
+    /* Ajustes para los ítems de noticia en pantallas pequeñas */
+    .noticia-item {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    /* Ajustes para las secciones en pantallas pequeñas */
+    .section {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    /* Ajustes para el contenedor de texto en secciones */
+    .contenedorTexto {
+        width: 90%;
+    }
+
+    /* Ajustes para el logo y contacto en el footer */
+    .footer-logo, .footer-contact {
+        flex: 1 1 100%;
+    }
+}
